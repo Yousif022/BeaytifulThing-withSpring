@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Yousif ’s App</title>
+        <link rel="stylesheet" type="text/css" media="all" href="Css/Style.css"></link>
+        
+    </h:head>
+    <h:body>
+        <h2 class="centeredtheheadline">These are a few of my favorite thing</h2>
+        <div class="topmenu"> 
+            <h:form>
+                <h:commandButton action="#{formController.showEntryForm()}" value="Create a new Thing"/>
+                  <h:commandButton action="#{formController.showAll()}" value="Show All"/>
+            </h:form>
+            
+        </div>
+        <h:dataTable value="#{formController.GetAll()}" var="thing" > 
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                <h:outputText value="#{thing.id}" />
+            </h:column>
+          <h:column>
+                <f:facet name="header">Header</f:facet>
+                <h:outputText value="#{thing.thingTitle}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Description</f:facet>
+                <h:outputText value="#{thing.thingDescription}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Rating</f:facet>
+                <h:outputText value="#{thing.rating}" />
+            </h:column>
+             
+            <h:column>
+                <f:facet name="header">Delete</f:facet>
+                <h:form>
+                <h:commandButton action="#{formController.deleteOn(thing)}" value="Delete" />
+                </h:form>
+            </h:column>
+ <h:column>
+                <f:facet name="header">Edit</f:facet>
+                <h:form>
+                <h:commandButton action="#{formController.OnShowEdit(thing)}" value="Edit" />
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        
+        <hr> </hr>
+        
+        <img src="Cowboy.png"  alt="cowboy photo" width="500px" height="200px"/>
+        <img src="download.jpg"    />
+        
+        <marquee style="color: red" >MY Name is Yousif JOO , Iam a web developer || Real Madrid Wins the champion || Ahmed Elsayed sayed in his instegram page that he gonna be okay || Elshnawy come back to Ground || SpaceX reached to Marz || Yousif Joo Reached to his first goal , Good Luck Man ||Kidnapping and killing of village chiefs 'an affront' || Witness describes New York cathedral shooting||Nigeria school attack: Around half of the 800 pupils unaccounted for ||Nigeria gunmen who seized children 'surrounded' || New York cathedral gunman shot dead by police
+</marquee>
+    </h:body>
+</html>
+
